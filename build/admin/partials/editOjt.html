@@ -1,0 +1,39 @@
+<md-dialog aria-label="Edit OJT"  ng-cloak>
+  <form name = "ojtInfo">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{transType}}</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+      <h4 style="text-align:center;">{{selectedPerson.person_fullname}}</h4>
+          <div style = "min-width:300px;">
+            <md-input-container class="md-block">
+              <label>Fullname</label>
+              <input ng-model="ojt.person_fullname" ng-init = "ojt.person_fullname = selectedPerson.person_fullname" required>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>School</label>
+              <input ng-model="ojt.ojt_school" ng-init = "ojt.ojt_school = selectedPerson.ojt_school" required>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Hours needed</label>
+              <input type = "number" ng-model="ojt.ojt_hours_needed" ng-init = "ojt.ojt_hours_needed = selectedPerson.ojt_hours_needed" required>
+            </md-input-container>
+          </div>
+      </div>
+
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="cancel()">
+        CANCEL
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="saveOjt(ojt)" class="md-raised md-primary" ng-disabled="ojtInfo.$invalid">
+        SAVE
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

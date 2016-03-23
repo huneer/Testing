@@ -1,0 +1,41 @@
+<div layout = "row" flex layout-fill>
+	<div flex-offset = "35" flex = "30" layout = "column" style="text-align:center;">
+		<div>
+		<h2 my-current-time></h2>
+		<h3 my-current-time = "theTime"></h3>
+		</div>
+		<md-whiteframe class="md-whiteframe-2dp" layout = "column" layout-padding>
+			<div>
+				<md-toolbar>
+					<div class="md-toolbar-tools">
+						<h4>Login Form</h4>
+					</div>
+				</md-toolbar>
+			</div>
+			<form name = "userUsername">
+				<div layout-padding>
+					<md-input-container class="md-block" flex-gt-sm >
+			            <label>Username</label>
+			            <input ng-model="user.username" required>
+	          		</md-input-container>
+	          		<md-input-container class="md-block" flex-gt-sm >
+			            <label>Password</label>
+			            <input ng-model="user.password" type="password" required>
+	          		</md-input-container>
+				</div>
+				<div style="border-bottom: inset #C0C0C0;">
+				</div>
+				<div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+				    <md-button flex="50" class="md-primary md-raised" ng-disabled="userUsername.$invalid" ng-click = "login(user)">LOGIN</md-button>
+			    </div>
+		    </form>
+		</md-whiteframe>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+	<div flex>&nbsp;</div>
+	<div flex></div>
+</div>
+

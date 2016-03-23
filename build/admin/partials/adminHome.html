@@ -1,0 +1,95 @@
+<div layout = "row" layout-padding ng-cloak>
+	<div flex>
+	  <md-content>
+	    <md-tabs md-dynamic-height md-border-bottom>
+	      <md-tab label="ACCOUNTS">
+	        <div layout = "row">
+	        	<div flex style="text-align: center;">
+          			<span><h2>Account List</h2></span>
+	        		<span><md-button class="md-raised md-primary" ng-click="addAccount($event)">ADD</md-button></span>
+ 				</div>
+	        </div>
+	        <md-content class="md-padding">
+	        
+				<div class="table-responsive">
+					<table class="table table-striped table-hover" wt-responsive-table>
+	                    <thead>
+	                        <tr>
+	                            <th>Fullname</th>
+	                            <th>Username</th>
+	                            <th>Password</th>
+	                            <th style="text-align: center;">Action</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        <tr ng-repeat="t in accountList">
+	                            <td>{{t.person_fullname}}</td>
+	                            <td>{{t.account_username}}</td>
+	                            <td>{{t.account_password}}</td>
+	                            <td style="text-align: center;">
+      								<md-button class="md-raised" ng-click="editAccount($event, t)">EDIT</md-button>
+      								<md-button class="md-raised md-warn" ng-hide = "t.person_type == 'admin'"ng-click="deleteAccount($event, t)">DELETE</md-button>
+	                            </td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+                </div>
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="OJT">
+	      	<div layout = "row">
+	        	<div flex style="text-align: center;">
+          			<span><h2>OJT List</h2></span>
+	        		<span><md-button class="md-raised md-primary" ng-click="addOjt($event)">ADD</md-button></span>
+ 				</div>
+	        </div>
+	        <md-content class="md-padding">
+	          <div class="table-responsive">
+					<table class="table table-striped table-hover" wt-responsive-table>
+	                    <thead>
+	                        <tr>
+	                            <th>Fullname</th>
+	                            <th>School</th>
+	                            <th>Required Hours</th>
+	                            <th style="text-align: center;">Action</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        <tr ng-repeat="ojt in ojtList">
+	                            <td>{{ojt.person_fullname}}</td>
+	                            <td>{{ojt.ojt_school}}</td>
+	                            <td>{{ojt.ojt_hours_needed}}</td>
+	                            <td style="text-align: center;">
+      								<md-menu>
+							          	<md-button aria-label="Open menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+							            	<ng-md-icon icon = "view_list" style = "fill: #FF66FF" size = "25"></ng-md-icon>
+							          	</md-button>
+							          	<md-menu-content width="6">
+								            <md-menu-item>
+								              	<md-button ng-click="showAttendance($event,ojt)">
+								                	<ng-md-icon icon = "done_all" style = "fill: #0099CC" size = "25"></ng-md-icon>
+								                	Attendance
+								              	</md-button>
+								              	<md-button ng-click="editOjt($event,ojt)">
+								                	<ng-md-icon icon = "mode_edit" style = "fill: #0099CC" size = "25"></ng-md-icon>
+								                	Edit
+								              	</md-button>
+								              	<md-button ng-click="deleteOjt($event,ojt)">
+								                	<ng-md-icon icon = "delete" style = "fill: #0099CC" size = "25"></ng-md-icon>
+								                	Delete
+								              	</md-button>
+								            </md-menu-item>
+							          	</md-menu-content>
+						        	</md-menu>
+	                            </td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+                </div>
+	        </md-content>
+	      </md-tab>
+	  </md-content>
+	</div>
+</div>
+
+<!-- ng-repeat="item in [{'action':'Attendance','icn':'done_all'},{'action':'Edit','icn':'mode_edit'},{'action':'Delete','icn':'delete'}]" -->

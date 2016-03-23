@@ -1,0 +1,52 @@
+<md-dialog aria-label="User Accounts" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{transType}} Account</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <form name = "accountInfo" ng-hide = "users.length == 0 && isAdding">
+    <md-dialog-content>
+      <div class="md-dialog-content">
+         <h4 style="text-align:center;">{{selectedPerson.person_fullname}}</h4>
+          <div style = "min-width:300px;">
+            <md-input-container class="md-block">
+              <label>Username</label>
+              <input ng-model="acc.account_username" ng-init = "acc.account_username = selectedPerson.account_username" required>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Password</label>
+              <input ng-model="acc.account_password" ng-init = "acc.account_password = selectedPerson.account_password" required>
+            </md-input-container>
+
+            <md-input-container class="md-block" ng-show = "isAdding">
+              <label>Account Owner</label>
+              <md-select ng-model="acc.account_person_id" ng-init = "acc.account_person_id = selectedPerson.account_person_id" required>
+                <md-option ng-repeat="user in users" value="{{user.person_id}}">{{user.person_fullname}}</md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="cancel()">
+        CANCEL
+      </md-button>
+      <span flex></span>
+      <md-button class="md-raised md-primary" ng-click="saveAccount(acc)" ng-disabled="accountInfo.$invalid">
+        SAVE
+      </md-button>
+    </md-dialog-actions>
+  </form>
+  <md-dialog-content ng-show = "users.length == 0 && isAdding">
+    <div layout="column" layout-padding>
+      <div flex>
+        
+      </div>
+      <div flex>
+        <h4 >All users already given an account!</h4>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>
+

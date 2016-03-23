@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Company Transaction Records</title>
+	<link rel="stylesheet" type="text/css" href="assets/angular-material/angular-material.css">
+	<link rel="stylesheet" type="text/css" href="assets/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/responsive-table/angular-responsive-tables.min.css" />
+    <style type="text/css">
+    	.btn1{
+    		font-size: 20px;
+    		padding-top: 20px;
+    		padding-bottom: 20px;
+    		padding-left: 40px;
+    		padding-right: 40px;
+    	}
+    	.footer{
+    		background-color: #660099;
+    		color: white;
+    		text-align: center;
+    	}
+    </style>
+</head>
+<body ng-app="app">
+	<div>
+		<div layout = "column">
+			<div ui-view = "body"></div>
+			<div ui-view = "footer"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/angular/angular.js"></script>
+	<script type="text/javascript" src="assets/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="assets/angular-aria/angular-aria.js"></script>
+	<script type="text/javascript" src="assets/angular-material/angular-material.js"></script>
+	<script type="text/javascript" src="assets/angular-ui-router/angular-ui-router.js"></script>
+	<script type="text/javascript" src="assets/angular-material-icons/angular-material-icons.js"></script>
+	
+    <script src="assets/responsive-table/angular-responsive-tables.min.js"></script>
+
+
+	<script type="text/javascript" src="build/common/app.js"></script>
+	<script type="text/javascript" src="build/common/app.config.router.js"></script>
+	<script type="text/javascript" src="build/common/app.controller.js"></script>
+
+	<script type="text/javascript" src="build/ojt/ojtCtrl.js"></script>
+	<script type="text/javascript" src="build/ojt/ojtAttendanceCtrl.js"></script>
+	<script type="text/javascript" src="build/ojt/headerCtrl.js"></script>
+	
+
+	<script type="text/javascript" src="build/admin/adminCtrl.js"></script>
+	<script type="text/javascript" src="build/admin/adminHomeCtrl.js"></script>
+
+	<script type="text/javascript" src="build/common/services/data.js"></script>
+
+</body>
+</html>
